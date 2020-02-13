@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_app/constants.dart';
+import 'package:flutter_app/location.dart';
 import 'avatar.dart';
-
-final kTextStyle = TextStyle(
-  fontFamily: 'Source Sans Pro',
-  color: Colors.teal.shade100,
-  fontSize: 20,
-  letterSpacing: 2.5,
-  fontWeight: FontWeight.bold,
-);
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -78,6 +71,7 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Location()
           ],
         ),
       ),
