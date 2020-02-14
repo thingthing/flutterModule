@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/models/tasks_notifier.dart';
+import 'package:flutter_app/widgets/avatar.dart';
+import 'package:flutter_app/widgets/location.dart';
+import 'package:provider/provider.dart';
 
-import 'avatar.dart';
-
-final kTextStyle = TextStyle(
-  fontFamily: 'Source Sans Pro',
-  color: Colors.teal.shade100,
-  fontSize: 20,
-  letterSpacing: 2.5,
-  fontWeight: FontWeight.bold,
-);
+import '../constants.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -33,6 +29,10 @@ class SplashScreen extends StatelessWidget {
               'MOBILE DEVELOPPER',
               style: kTextStyle,
             ),
+            Text(
+              '${Provider.of<TasksNotifier>(context).tasksCount} Tasks',
+              style: kTextStyle,
+            ),
             SizedBox(
               height: 20,
               width: 150,
@@ -52,9 +52,10 @@ class SplashScreen extends StatelessWidget {
                 ),
                 title: Text(
                   '+33 7 83 67 91 51',
-                  style: kTextStyle.copyWith(
+                  style: TextStyle(
+                    fontFamily: 'Source Sans Pro',
                     color: Colors.teal.shade900,
-                    fontWeight: FontWeight.normal,
+                    fontSize: 20,
                   ),
                 ),
               ),
@@ -71,13 +72,15 @@ class SplashScreen extends StatelessWidget {
                 ),
                 title: Text(
                   'nicolas@blackfoot.io',
-                  style: kTextStyle.copyWith(
+                  style: TextStyle(
+                    fontFamily: 'Source Sans Pro',
                     color: Colors.teal.shade900,
-                    fontWeight: FontWeight.normal,
+                    fontSize: 20,
                   ),
                 ),
               ),
             ),
+            Location(),
           ],
         ),
       ),

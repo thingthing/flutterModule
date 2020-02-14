@@ -14,9 +14,7 @@ class _AvatarState extends State<Avatar> {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 50,
-      backgroundImage: AssetImage(
-        'assets/${kAssets[_clickState ? 1 : 0]}',
-      ),
+      backgroundImage: AssetImage('assets/${kAssets[_clickState ? 1 : 0]}'),
       backgroundColor: Colors.transparent,
       child: FlatButton(
         onPressed: () {
